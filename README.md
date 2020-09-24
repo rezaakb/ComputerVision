@@ -1,4 +1,5 @@
 # Computer Vision
+My homework in the Computer Vision course
 
 ### HW1
 - **Q1: [Harris Corner Detection and Matching](HW1/Q1.py)**
