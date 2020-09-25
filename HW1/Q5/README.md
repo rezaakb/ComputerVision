@@ -1,11 +1,21 @@
 # Compute Intrinsics from Vanishing Points in Single Image
 We want accurate ratio:
-![1](5.jpg)
+<div align="center">
+  <img src="5.jpg" />
+</div>
 First, we find vanishing point:
-![1](1.jpg)
+<div align="center">
+  <img src="1.jpg" />
+</div>
 Afterward, we calculate the focal length by vanishing points:
-![1](4.jpg)
+<div align="center">
+  <img src="4.jpg" />
+</div>
 result 1:
-![2](2.jpg)
-result 1:
-![3](3.jpg)
+<div align="center">
+  <img src="2.jpg" />
+</div>
+result 2:
+<div align="center">
+  <img src="3.jpg" />
+</div>
