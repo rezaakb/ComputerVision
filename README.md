@@ -11,7 +11,7 @@ My homework in Computer Vision course
 
 ### HW2
 - **Q1: [Camera Calibration](HW2/Q1)**
-- **Q2: [Pipolar Geometry](HW2/Q2)**
+- **Q2: [Epipolar Geometry](HW2/Q2)**
 - **Q3: [Vanishing Lines, Points, and Horizon](HW2/Q3)**
 - **Q4: [3D Reconstruction](HW2/Q4)**
 
