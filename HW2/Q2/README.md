@@ -1,2 +1,2 @@
-# Pipolar Geometry
+# Epipolar Geometry
 ![readme](readme.jpg)
