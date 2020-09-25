@@ -1,2 +1,4 @@
 # Vanishing Lines, Points, and Horizon
-![result](r3.jpg)
+![1](1.jpg)
+![2](2.jpg)
+
