@@ -1,4 +1,5 @@
 # Computer Vision
+<<<<<<< HEAD
 My homework in Computer Vision course
 
 ### HW1
@@ -7,6 +8,16 @@ My homework in Computer Vision course
 - **Q3: [Panorama - Image Stitching](HW1/Q3.py)**
 - **Q4: [Find Homography with RANSAC and SIFT](HW1/Q4.py)**
 - **Q5: [Compute Intrinsics from Vanishing Points in Single Image](HW1/Q5.py)**
+=======
+My homework in the Computer Vision course
+
+### HW1
+- **Q1: [Harris Corner Detection and Matching](HW1/Q1.py)**
+- **Q2: [Projective Geometry](HW1/Q2.py)**
+- **Q3: [Panorama - Image Stitching](HW1/Q3.py)**
+- **Q4: [Find Homography with RANSAC and SIFT](HW1/Q4.py)**
+- **Q5: [Calculate Focal Length from Vanishing Points in Single Image](HW1/Q5.py)**
+>>>>>>> 70085a86dfea4d517ff16ce4eff253a660197f0a
 
 
 ### HW2
