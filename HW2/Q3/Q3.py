@@ -26,11 +26,11 @@ right_vanishing_point = findVanishingPoint(right)
 left_vanishing_point = findVanishingPoint(left)
 up_vanishing_point = findVanishingPoint(up)
 
-im = cv2.imread('inputs/vns.jpg')
+im = cv2.imread('vns.jpg')
 
 double_im = cv2.copyMakeBorder(im, border, border, border, border, cv2.BORDER_CONSTANT, None, [0,0,0])
 double_im = cv2.line(double_im,right_vanishing_point,left_vanishing_point,(0,255,0),thickness=5)
 print('up =', up_vanishing_point)
 print('right = ', right_vanishing_point)
 print('left = ', left_vanishing_point)
-cv2.imwrite('outputs/r3.jpg',double_im)
+cv2.imwrite('r3.jpg', double_im)

@@ -30,7 +30,7 @@ def equationPlane(x1, y1, z1, x2, y2, z2, x3, y3, z3):
     norm = np.sqrt(a**2+b**2+c**2)
     return a/norm,b/norm,c/norm,d
 
-img = cv2.imread('input/14.png')
+img = cv2.imread('14.png')
 Px = img.shape[0]/2
 Py = img.shape[1]/2
 distance = np.sqrt(40**2-25**2)
@@ -59,4 +59,4 @@ K_inverse  = np.linalg.inv(K)
 K_2=np.array([[500,0,P2x],[0,500,P2y],[0,0,1]])
 h = np.dot(np.dot(K_2,R-(np.dot(t,np.array([a,b,c]))/d)),K_inverse)
 print(h)
-cv2.imwrite('output/r12.jpg',cv2.warpPerspective(img,h,(2*P2x,2*P2y)))
+cv2.imwrite('r12.jpg', cv2.warpPerspective(img, h, (2 * P2x, 2 * P2y)))

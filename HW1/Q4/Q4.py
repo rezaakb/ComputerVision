@@ -4,10 +4,10 @@ import numpy as np
 
 scale_percent = 30
 
-img1 = cv2.imread('input/11.JPG')
+img1 = cv2.imread('11.JPG')
 img1 = cv2.resize(img1, ((img1.shape[1] * scale_percent) // 100,(img1.shape[0] * scale_percent) // 100), interpolation = cv2.INTER_AREA)
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-img2 = cv2.imread('input/12.JPG')
+img2 = cv2.imread('12.JPG')
 img2 = cv2.resize(img2, ((img2.shape[1] * scale_percent) // 100,(img2.shape[0] * scale_percent) // 100), interpolation = cv2.INTER_AREA)
 img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
@@ -28,7 +28,7 @@ tmp2[:,:,:] = img2[:,:,:]
 cv2.drawKeypoints(img2,kp2,tmp2,color=(0,255,0), flags=0)
 r14_corners[floor(n/2-img2.shape[0]/2):floor(n/2+img2.shape[0]/2),img1.shape[1]+20:img1.shape[1]+img2.shape[1]+20,:] = tmp2[:,:,:]
 
-cv2.imwrite('output/r14_corners.jpg',r14_corners)
+cv2.imwrite('r14_corners.jpg', r14_corners)
 
 bf = cv2.BFMatcher()
 matches = bf.knnMatch(d1,d2, k=2)
@@ -52,7 +52,7 @@ for d,i,j in good:
 r15_corres[:,0:img1.shape[1],:] = tmp3[:,:,:]
 r15_corres[floor(n/2-img2.shape[0]/2):floor(n/2+img2.shape[0]/2),img1.shape[1]+20:img1.shape[1]+img2.shape[1]+20,:] = tmp4[:,:,:]
 
-cv2.imwrite('output/r15_correspondencess.jpg',r15_corres)
+cv2.imwrite('r15_correspondencess.jpg', r15_corres)
 
 r16_SIFT = r15_corres
 
@@ -61,7 +61,7 @@ for d,i,j in good:
                         (img1.shape[1] + 20 + int(kp2[j].pt[0]), floor(n / 2 - img2.shape[0] / 2) +  int(kp2[j].pt[1])),
                         (255, 0, 0))
 
-cv2.imwrite('output/r16_SIFT.jpg',r16_SIFT)
+cv2.imwrite('r16_SIFT.jpg', r16_SIFT)
 
 
 tmp1 = np.zeros_like(img1)
@@ -92,7 +92,7 @@ for d,i,j in good:
                         (255, 0, 0),thickness=2)
 
 
-cv2.imwrite('output/r17.jpg',r17)
+cv2.imwrite('r17.jpg', r17)
 
 w=0
 counter=0
@@ -189,7 +189,7 @@ r18 = np.ones((n,m,3))*255
 r18[:,0:img1.shape[1],:] = tmp1[:,:,:]
 r18[floor(n/2-img2.shape[0]/2):floor(n/2+img2.shape[0]/2),img1.shape[1]+20:img1.shape[1]+img2.shape[1]+20,:] = tmp2[:,:,:]
 
-cv2.imwrite('output/r18.jpg',r18)
+cv2.imwrite('r18.jpg', r18)
 
 r20 = cv2.warpPerspective(img1, h,(img2.shape[1]*2,img2.shape[0]*2))
-cv2.imwrite('output/r20.jpg',r20[0:1025,0:1668,:])
+cv2.imwrite('r20.jpg', r20[0:1025, 0:1668, :])

@@ -8,9 +8,9 @@ def initialization():
     images = images.astype('uint8')
     for i in range(1,21):
         if i<10:
-            name_file = 'inputs/im0' + str(i)+'.jpg'
+            name_file = 'im0' + str(i)+'.jpg'
         else:
-            name_file = 'inputs/im'+str(i)+'.jpg'
+            name_file = 'im'+str(i)+'.jpg'
         images[i-1,:,:,:]=cv2.imread(name_file)
     objpoints = []
     imgpoints = []

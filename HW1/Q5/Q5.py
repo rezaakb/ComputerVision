@@ -23,7 +23,7 @@ def IntersectionBetweenPointandLine(m1,b1, line2) :
 def distance(p1,p2):
     return np.sqrt((p1[1]-p2[1])**2+(p1[0]-p2[0])**2)
 
-img = cv2.imread('input/13.jpg')
+img = cv2.imread('13.jpg')
 points = [[688, 1073], [2153, 558], [831, 3273], [2590, 3194],[2286,1323],[2351,1376],[2513,2646],[2569,2640]]
 B = lineIntersectionWith2Point((points[0], points[2]), (points[1], points[3]))
 A = lineIntersectionWith2Point((points[0], points[1]), (points[2], points[3]))
@@ -60,10 +60,10 @@ h, status = cv2.findHomography(np.array(
     [[points[0][1], points[0][0]], [points[1][1], points[1][0]], [points[2][1], points[2][0]],
      [points[3][1], points[3][0]]]), np.array([[y - 1, 0], [0, 0], [y - 1, x - 1], [0, x - 1]]))
 im_dst = cv2.warpPerspective(img, h, (y, x))
-cv2.imwrite('output/r21.jpg', im_dst)
+cv2.imwrite('r21.jpg', im_dst)
 
 
-img = cv2.imread('output/r20.jpg')
+img = cv2.imread('r20.jpg')
 points =[[4,1174],[ 175,233], [885,1202], [765,120],[11,1365],[79,1656],[255,1383],[293,1645]]
 B = lineIntersectionWith2Point((points[0], points[2]), (points[1], points[3]))
 A = lineIntersectionWith2Point((points[0], points[1]), (points[2], points[3]))
@@ -101,5 +101,5 @@ h, status = cv2.findHomography(np.array(
     [[points[0][1], points[0][0]], [points[1][1], points[1][0]], [points[2][1], points[2][0]],
      [points[3][1], points[3][0]]]), np.array([[y - 1, 0], [0, 0], [y - 1, x - 1], [0, x - 1]]))
 im_dst = cv2.warpPerspective(img, h, (y, x))
-cv2.imwrite('output/r22.jpg', im_dst)
+cv2.imwrite('r22.jpg', im_dst)
 

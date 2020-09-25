@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 
 scale_percent = 30
 
-img1 = cv2.imread('inputs/Building1.JPG')
+img1 = cv2.imread('Building1.JPG')
 img1 = cv2.resize(img1, ((img1.shape[1] * scale_percent) // 100,(img1.shape[0] * scale_percent) // 100), interpolation = cv2.INTER_AREA)
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 
-img2 = cv2.imread('inputs/Building2.JPG')
+img2 = cv2.imread('Building2.JPG')
 img2 = cv2.resize(img2, ((img2.shape[1] * scale_percent) // 100,(img2.shape[0] * scale_percent) // 100), interpolation = cv2.INTER_AREA)
 img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
@@ -93,8 +93,8 @@ for i in range(10):
     cv2.line(res1,(points1[i,0],points1[i,1]),tuple(map(int, e1[0:2])),(0, 255, 0), thickness=2)
     cv2.line(res2,(points2[i,0],points2[i,1]),tuple(map(int, e2[0:2])),(0, 255, 0), thickness=2)
 
-cv2.imwrite('outputs/r2_2.jpg',res1)
-cv2.imwrite('outputs/r2_3.jpg',res2)
+cv2.imwrite('r2_2.jpg', res1)
+cv2.imwrite('r2_3.jpg', res2)
 
 '''
 res1 = np.copy(img1)

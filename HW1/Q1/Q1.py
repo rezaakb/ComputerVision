@@ -33,7 +33,7 @@ nesbat =0.6
 
 
 
-img1 = cv2.imread('input/01.jpg')
+img1 = cv2.imread('01.JPG')
 img1 = cv2.resize(img1, ((img1.shape[1] * scale_percent) // 100,(img1.shape[0] * scale_percent) // 100), interpolation = cv2.INTER_AREA)
 img1_b_x = signal.convolve2d(img1[:,:,0], gx, boundary='symm', mode='same')
 img1_g_x = signal.convolve2d(img1[:,:,1], gx, boundary='symm', mode='same')
@@ -49,7 +49,7 @@ img1_x2 = img1_x *img1_x
 img1_y2 = img1_y * img1_y
 img1_xy = img1_y *img1_x
 
-cv2.imwrite('output/r01_grad.jpg',np.sqrt(img1_x2+img1_y2))
+cv2.imwrite('r01_grad.jpg', np.sqrt(img1_x2 + img1_y2))
 
 s1_x2 = signal.convolve2d(img1_x2, g, boundary='symm', mode='same')
 s1_y2 = signal.convolve2d(img1_y2, g, boundary='symm', mode='same')
@@ -57,10 +57,10 @@ s1_xy = signal.convolve2d(img1_xy, g, boundary='symm', mode='same')
 
 harris1 = (s1_x2*s1_y2 - s1_xy) - k*(s1_x2+s1_y2)
 tmp = ((harris1-np.min(harris1)) / (np.max(harris1)-np.min(harris1)))*255
-cv2.imwrite('output/r03_score.jpg',tmp)
+cv2.imwrite('r03_score.jpg', tmp)
 
 thresh1 = cv2.threshold(tmp,2.5,255,cv2.THRESH_BINARY)[1]
-cv2.imwrite('output/r05_thresh.jpg',thresh1)
+cv2.imwrite('r05_thresh.jpg', thresh1)
 thresh1= np.uint8(thresh1)
 num_labels, labels_im = cv2.connectedComponents(thresh1)
 harris1_dots = np.zeros_like(harris1)
@@ -88,9 +88,9 @@ for i in range(1,num_labels):
     tmp1 = ((tmp - np.min(tmp)) / (np.max(tmp) - np.min(tmp)))
     feature1[i-1,:] =tmp1[:]
 
-cv2.imwrite('output/r07_harris.jpg',r07_harris)
+cv2.imwrite('r07_harris.jpg', r07_harris)
 
-img2 = cv2.imread('input/02.jpg')
+img2 = cv2.imread('02.JPG')
 img2 = cv2.resize(img2, ((img2.shape[1] * scale_percent) // 100,(img2.shape[0] * scale_percent) // 100), interpolation = cv2.INTER_AREA)
 img2_b_x = signal.convolve2d(img2[:,:,0], gx, boundary='symm', mode='same')
 img2_g_x = signal.convolve2d(img2[:,:,1], gx, boundary='symm', mode='same')
@@ -106,7 +106,7 @@ img2_x2 = img2_x *img2_x
 img2_y2 = img2_y * img2_y
 img2_xy = img2_y *img2_x
 
-cv2.imwrite('output/r02_grad.jpg',np.sqrt(img2_x2+img2_y2))
+cv2.imwrite('r02_grad.jpg', np.sqrt(img2_x2 + img2_y2))
 
 s2_x2 = signal.convolve2d(img2_x2, g, boundary='symm', mode='same')
 s2_y2 = signal.convolve2d(img2_y2, g, boundary='symm', mode='same')
@@ -114,10 +114,10 @@ s2_xy = signal.convolve2d(img2_xy, g, boundary='symm', mode='same')
 
 harris2 = (s2_x2*s2_y2 - s2_xy) - k*(s2_x2+s2_y2)
 tmp = ((harris2-np.min(harris2)) / (np.max(harris2)-np.min(harris2)))*255
-cv2.imwrite('output/r04_score.jpg',tmp)
+cv2.imwrite('r04_score.jpg', tmp)
 
 thresh2 = cv2.threshold(tmp,2.5,255,cv2.THRESH_BINARY)[1]
-cv2.imwrite('output/r06_thresh.jpg',thresh2)
+cv2.imwrite('r06_thresh.jpg', thresh2)
 thresh2= np.uint8(thresh2)
 num_labels, labels_im = cv2.connectedComponents(thresh2)
 harris2_dots = np.zeros_like(harris2)
@@ -145,7 +145,7 @@ for i in range(1,num_labels):
     tmp1 = ((tmp - np.min(tmp)) / (np.max(tmp) - np.min(tmp)))
     feature2[i-1,:] =tmp1[:]
 
-cv2.imwrite('output/r08_harris.jpg',r08_harris)
+cv2.imwrite('r08_harris.jpg', r08_harris)
 
 
 n=len(feature1)
@@ -223,9 +223,9 @@ for i in range(min(len(best_lines),10)):
     r11 = cv2.circle(r11, (best_lines[i][4] + 10 + img1.shape[1], best_lines[i][3]), 6, (255, 0, 0), thickness=2)
     r11 = cv2.line(r11, (best_lines[i][2], best_lines[i][1]), (best_lines[i][4] + 10 + img1.shape[1], best_lines[i][3]), (0, 255, 0),thickness=2)
 
-cv2.imwrite('output/r09_corres.jpg',r09_corres)
-cv2.imwrite('output/r10_corres.jpg',r10_corres)
-cv2.imwrite('output/r11.jpg',r11)
+cv2.imwrite('r09_corres.jpg', r09_corres)
+cv2.imwrite('r10_corres.jpg', r10_corres)
+cv2.imwrite('r11.jpg', r11)
 
 
 

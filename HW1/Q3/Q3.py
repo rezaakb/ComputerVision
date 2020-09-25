@@ -158,4 +158,4 @@ def stiching(img1,img2,h):
 for i,h in list_matched:
     base = stiching(base,img[i],h)
 
-cv2.imwrite('output/r13.jpg',base[482:1655,350:4121,:])
+cv2.imwrite('r13.jpg', base[482:1655, 350:4121, :])
