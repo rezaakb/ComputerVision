@@ -17,4 +17,4 @@ My homework in Computer Vision course
 
 ### HW3
 - **Q1: [Trained Model with CNN on MNIST](HW3/Q1.ipynb)**
-- **Q2: [Trained Model with Naive Bayes on MNIST](HW3/Q1_NaiveBayes_Optional.ipynb)**
+- **Q2: [Trained Model with Naive Bayes + Gaussian Mixture Model on MNIST](HW3/Q1_NaiveBayes_Optional.ipynb)**
